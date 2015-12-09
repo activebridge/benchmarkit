@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: postgres
+  password: password
+
+development:
+  <<: *default
+  database: benchmarkit_development
+
+test:
+  <<: *default
+  database: benchmarkit_test
+
+production:
+  <<: *default
+  database: benchmarkit_production
+  username: benchmarkit
+  password: <%= ENV['BENCHMARKIT_DATABASE_PASSWORD'] %>
