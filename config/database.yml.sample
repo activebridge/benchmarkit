@@ -8,7 +8,7 @@ default: &default
 
 development:
   <<: *default
-  database: benchmarkit_development
+  database: benchmarkit_dev
 
 test:
   <<: *default
