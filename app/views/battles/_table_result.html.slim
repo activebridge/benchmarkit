@@ -1,0 +1,24 @@
+table
+  tr
+    th
+      | Label
+    th
+      | User
+    th
+      | System
+    th
+      | Total
+    th
+      | Real
+  - result.each do |bm|
+    tr
+      td
+        = bm.label
+      td
+        = bm.utime
+      td
+        = bm.stime
+      td
+        = bm.total
+      td
+        = bm.real
