@@ -3,16 +3,12 @@ default: &default
   encoding: unicode
   pool: 5
   host: localhost
-  username: postgres
-  password: password
 
 development:
   <<: *default
   database: benchmarkit_dev
-
-test:
-  <<: *default
-  database: benchmarkit_test
+  username: postgres
+  password: password
 
 production:
   <<: *default

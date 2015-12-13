@@ -14,3 +14,5 @@ module Benchmarkit
     config.quiet_assets = false
   end
 end
+
+SECRETS = Rails.application.secrets
