@@ -4,7 +4,12 @@ class BattlesController < ApplicationController
   end
 
   def create
-    # if
+    @battle = Battle.new(battle_params)
+    if @battle.save
+      render battle_url(@battle)
+    else
+      render 'Something went wrong. Try find again.'
+    end
   end
 
   def count
