@@ -8,6 +8,6 @@ class Battle < ActiveRecord::Base
       x.report('after')  { ITERATIONS_COUNT.times { eval(after) } }
     end
   rescue Exception => e
-    @error = e
+    e.message
   end
 end

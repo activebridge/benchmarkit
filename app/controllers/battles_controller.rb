@@ -4,8 +4,14 @@ class BattlesController < ApplicationController
   end
 
   def create
-    battle = Battle.new(battle_params)
-    @result = battle.compare if battle.valid?
+    # if
+  end
+
+  def count
+    @battle = Battle.new(battle_params)
+    if @battle.valid?
+      @battle.result = @battle.compare.to_json
+    end
   end
 
   private

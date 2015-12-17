@@ -1,0 +1,6 @@
+= simple_form_for battle, remote: true do |f|
+  = f.input :before, as: :hidden
+  = f.input :after, as: :hidden
+  = f.input :result, as: :hidden
+  span.label.label-success
+    = f.submit 'Get link!'
