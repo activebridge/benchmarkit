@@ -1,6 +1,6 @@
-<%- if @result %>
+<%- if @result.is_a?(Array) %>
 var content = "<%= j(render 'table_result', result: @result) %>"
 <%- else %>
-var content = '<center><h3>Please check your Before and After code!</h3></center>'
+var content = "<center><h3>Please check your Before and After code!</h3></center><br/><center><%= j @result.try(:message) %></center>"
 <%- end %>
 $('#result').html(content)

@@ -7,7 +7,7 @@ class Battle < ActiveRecord::Base
       x.report('before') { ITERATIONS_COUNT.times { eval(before) } }
       x.report('after')  { ITERATIONS_COUNT.times { eval(after) } }
     end
-  rescue
-    nil
+  rescue Exception => e
+    @error = e
   end
 end
