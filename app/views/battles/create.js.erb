@@ -1,6 +1,5 @@
-<%- if @result %>
-var content = "<%= j(render 'table_result', result: @result) %>"
+<%- if @battle.persisted? %>
+$('#get_link_form').html('<%= j render "provide_battle_link" %>')
 <%- else %>
-var content = '<center><h3>Please check your Before and After code!</h3></center>'
+$('#get_link_form').append("<div class='message message-error'>Your battle description was broken.</div>")
 <%- end %>
-$('#result').html(content)

@@ -1,0 +1,12 @@
+center
+  h2 Display code Battle
+row centered=''
+  column cols='4'
+    span.label.label-black Before
+    = text_area_tag :before, @battle.before, size: '10x15', disabled: true
+  column cols='4'
+    span.label.label-black After
+    = text_area_tag :after, @battle.after, size: '10x15', disabled: true
+row centered=''
+  column cols='4'
+    = render 'table_result', result: display_result(@battle)

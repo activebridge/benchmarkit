@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'battles#new'
 
-  resource :battles, only: [:new, :create, :show]
+  resources :battles, only: [:new, :show, :create, :update] do
+    post :count, on: :collection
+  end
 end

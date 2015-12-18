@@ -3,9 +3,20 @@ class BattlesController < ApplicationController
     @battle = Battle.new
   end
 
+  def show
+    @battle = Battle.find(params[:id])
+  end
+
   def create
-    battle = Battle.new(battle_params)
-    @result = battle.compare if battle.valid?
+    @battle = Battle.new(battle_params)
+    @battle.save
+  end
+
+  def count
+    @battle = Battle.new(battle_params)
+    if @battle.valid?
+      @battle.result = @battle.compare.to_json
+    end
   end
 
   private

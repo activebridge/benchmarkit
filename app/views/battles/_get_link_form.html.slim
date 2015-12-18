@@ -1,0 +1,7 @@
+= simple_form_for battle, remote: true, html: { id: 'get_link_form' } do |f|
+  = f.input :before, as: :hidden
+  = f.input :after, as: :hidden
+  = f.input :result, as: :hidden
+  center
+    button outline=''
+      = f.submit 'Get link!'
