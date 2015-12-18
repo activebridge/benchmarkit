@@ -1,0 +1,10 @@
+center#url-block
+  .message.message-warning
+    #link-icon data-clipboard-target='url' data-clipboard-text='Default clipboard text from attribute' title='Copy to clipboard.'
+      i.fa.fa-link
+        | &nbsp;&nbsp;
+    #url
+      = battle_url(@battle)
+
+javascript:
+  var client = new ZeroClipboard( document.getElementById("link-icon") );

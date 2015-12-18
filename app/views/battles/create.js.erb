@@ -1,1 +1,5 @@
-// $('#button').html(messageOrURL)
+<%- if @battle.persisted? %>
+$('#get_link_form').html('<%= j render "provide_battle_link" %>')
+<%- else %>
+$('#get_link_form').append("<div class='message message-error'>Your battle description was broken.</div>")
+<%- end %>

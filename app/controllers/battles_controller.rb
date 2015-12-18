@@ -3,13 +3,13 @@ class BattlesController < ApplicationController
     @battle = Battle.new
   end
 
+  def show
+    @battle = Battle.find(params[:id])
+  end
+
   def create
     @battle = Battle.new(battle_params)
-    if @battle.save
-      render battle_url(@battle)
-    else
-      render 'Something went wrong. Try find again.'
-    end
+    @battle.save
   end
 
   def count
