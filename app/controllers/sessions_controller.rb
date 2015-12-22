@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       session['account_id'] = account.id
       flash[:success] = 'Logged in!'
     else
-      flash[:error] = 'Ferification was faild!'
+      flash[:error] = 'Ferification was failed!'
     end
     redirect_to :root
   end

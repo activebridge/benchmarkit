@@ -5,8 +5,8 @@ module ApplicationHelper
       'alert-success'
     when :error
       'alert-error'
-    when :prymary
-      'alert-prymary'
+    when :primary
+      'alert-primary'
     when :warning
       'alert-warning'
     else
