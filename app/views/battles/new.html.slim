@@ -1,17 +1,17 @@
-center
+.center-align
   h2 Let's start code Battle
 = simple_form_for @battle, url: count_battles_path, remote: true do |f|
-  row centered=''
-    column cols='4'
-      / = f.label :before
-      = f.input_field :before, size: '10x15', placeholder: "Code team 'Before'"
-    column cols='4'
-      / = f.label :after
-      = f.input_field :after, size: '10x15', placeholder: "Code team 'After'"
-  row centered=''
-    column cols='4'
-      center
-        = f.button :button, 'Start the Battle', data: { 'disable-with': 'Finding best...' }, type: 'black'
-row centered=''
-  column cols='4'
+  .row
+    .col.s12.l6.input-field
+      = f.input_field :before, size: '10x15', class: 'materialize-textarea'
+      = f.label :before, 'Code team "Before"'
+    .col.s12.l6.input-field
+      = f.input_field :after, size: '10x15', class: 'materialize-textarea'
+      = f.label :after, 'Code team "After"'
+  .row
+    .col.s12
+      .center-align
+        = f.button :button, 'start the battle', data: { 'disable-with': 'Finding best...' }, class: 'btn black'
+.row
+  .col.s12.l8.offset-l2
     #result

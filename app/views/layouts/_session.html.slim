@@ -1,4 +1,8 @@
-- if current_user
-  = link_to 'Sign Out', sessions_destroy_path
-- else
-  = link_to 'Sign In', 'auth/github'
+.fixed-action-btn.horizontal.click-to-toggle
+  a.btn-floating.btn-large.red.lighten-1
+    i.large.mdi-navigation-menu
+  ul
+    - if current_user
+          li = link_to 'Sign Out', sessions_destroy_path
+    - else
+          li = link_to 'Sign In', 'auth/github'

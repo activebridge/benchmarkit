@@ -9,7 +9,7 @@ gem 'font-awesome-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'kube-rails'
+gem 'materialize-sass'
 gem 'omniauth-github'
 gem 'pg'
 gem 'rails_12factor', group: :production

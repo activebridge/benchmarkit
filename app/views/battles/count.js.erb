@@ -3,9 +3,9 @@
 <%- if result.is_a?(Array) %>
 var content = "<%= j(render 'table_result', result: result) %><%= j(render 'get_link_form', battle: @battle) %>"
 <%- elsif result %>
-var content = "<center><h3>Please check your Before and After code!</h3></center><br/><center><%= j(result) %></center>"
+var content = "<h3 class='center-align'>Please check your Before and After code!</h3></center><br/><center><%= j(result) %>"
 <%- else %>
-var content = "<center><%= @battle.errors.full_messages.to_sentence %></center>"
+var content = "<div class='center-align'><%= @battle.errors.full_messages.to_sentence %></div>"
 <%- end %>
 
 $('#result').html(content)
