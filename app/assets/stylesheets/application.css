@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require font-awesome
+ *= require materialize
+ *= require material_icons
  *= require_tree .
  *= require_self
  */

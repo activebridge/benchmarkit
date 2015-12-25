@@ -1,10 +1,15 @@
-center#url-block
-  .message.message-warning
-    #link-icon data-clipboard-target='url' data-clipboard-text='Default clipboard text from attribute' title='Copy to clipboard.'
-      i.fa.fa-link
-        | &nbsp;&nbsp;
-    #url
-      = battle_url(@battle)
+#url-block.center-align
+  .card.blue-grey.darken-1.z-depth-5
+    .card-content.white-text
+      span.card-title
+        ' Share link
+      .card-action
+        p Your battle was saved. You can copy link and share.
+        #link-icon.col.s1 data-clipboard-target='url' data-clipboard-text='Default clipboard text from attribute' title='Copy to clipboard.'
+          i.material-icons.small.md-dark
+            | insert link
+        #url.col.s11
+          = battle_url(@battle)
 
 javascript:
   var client = new ZeroClipboard( document.getElementById("link-icon") );
