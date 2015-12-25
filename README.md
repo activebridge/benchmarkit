@@ -3,3 +3,6 @@
 * git clone git@github.com:activebridge/benchmarkit.git
 * cd app
 * ./bin/setup
+
+Uses google material design icons
+https://design.google.com/icons/
