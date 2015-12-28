@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'battles#new'
 
-  resources :accounts, only: [] do
+  resources :users, only: [] do
     resources :battles, only: [:show, :create, :destroy]
   end
 

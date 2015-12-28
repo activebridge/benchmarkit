@@ -5,6 +5,9 @@ class BattlesController < ApplicationController
 
   def show
     @battle = Battle.find(params[:id])
+    @comment_battle = Battle.new
+    @comments = @battle.comments
+    @comment = Comment.new
   end
 
   def create
@@ -22,6 +25,7 @@ class BattlesController < ApplicationController
   private
 
   def battle_params
+    params[:battle].merge!(user_id: current_user&.id)
     params.require(:battle).permit!
   end
 end

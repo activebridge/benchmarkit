@@ -2,6 +2,9 @@ class Battle < ActiveRecord::Base
   ITERATIONS_COUNT = 50_000
   validates :before, :after, presence: true
 
+  has_many :comments, class_name: 'Comment', foreign_key: :head_battle_id
+  has_one :comment, class_name: 'Comment', foreign_key: :comment_battle_id
+
   def compare
     Benchmark.bm do |x|
       x.report('before') { ITERATIONS_COUNT.times { eval(before) } }

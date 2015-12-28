@@ -1,13 +1,16 @@
-.fixed-action-btn.horizontal.click-to-toggle
-  a.btn-floating.btn-large.red.lighten-1
-    i.large.mdi-navigation-menu
-  ul
+#navigation
+  .fixed-action-btn.horizontal.click-to-toggle.top-navigation
     - if current_user
-          li = link_to sessions_destroy_path do
-            i.material-icons.small.md-dark
-              | not interested
+      a.btn-floating.btn-large.green.accent-4
+        i.large.mdi-navigation-menu
+      ul
+        li
+          = link_to sessions_destroy_path do
+            i.fa.fa-sign-out.fa-2x
     - else
-          li
-            = link_to 'auth/github' do
-              i.material-icons.small.md-dark
-                | input
+      a.btn-floating.btn-large.red.lighten-1
+        i.large.mdi-navigation-menu
+      ul
+        li
+          = link_to 'auth/github' do
+            i.fa.fa-github.fa-2x

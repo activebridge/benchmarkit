@@ -1,0 +1,7 @@
+h3 Comments
+= render partial: 'comments/comment', collection: comments
+= simple_form_for @comment_battle do |f|
+  = f.input :before
+  = f.input :after
+  = f.input :result
+  = f.submit
