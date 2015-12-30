@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   validates :uid, presence: true
 
+  has_many :comments
+
   def self.github(request)
     find_or_initialize_by(uid: request['uid']).tap do |user|
       user.email = request.dig('info', 'email')

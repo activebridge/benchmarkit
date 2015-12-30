@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'battles#new'
 
-  resources :users, only: [] do
-    resources :battles, only: [:show, :create, :destroy]
+  resources :battles, only: [:show, :create, :destroy] do
+    resources :comments, only: :create
   end
 
   resources :battles, only: [:new, :show, :create, :update] do

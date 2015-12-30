@@ -1,0 +1,21 @@
+#comment_modal.modal.modal-fixed-footer
+  .modal-content
+    = simple_form_for [@battle, @comment] do |f|
+      = f.simple_fields_for :comment_battle do |b|
+        .row
+          .col.s12.l6.input-field
+            = b.label :before, 'This code is bad'
+            = b.input_field :before, value: @battle.before, class: 'materialize-textarea', disabled: true
+          .col.s12.l6.input-field
+            = b.label :after, 'I have better code'
+            = b.input_field :after, class: 'materialize-textarea'
+          = b.input :result, as: :hidden
+          #result
+        => button_tag :check, id: 'check_better', class: 'btn-bordered-radius'
+        = button_tag :clear, id: 'clear_better', class: 'btn-bordered-radius purple lighten-5'
+      .input-field
+        = f.label :text, 'Message'
+        = f.input_field :text, class: 'materialize-textarea'
+
+  .modal-footer
+    = button_tag 'add comment', id: 'add_comment', class: 'btn-flat btn-bordered-radius'

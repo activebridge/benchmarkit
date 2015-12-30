@@ -1,0 +1,17 @@
+.indent {
+  padding: 5px 20px;
+  margin: 20px 0;
+}
+
+.avatar {
+  display: inline-block;
+  span {
+    overflow: hidden;
+    text-owerflow: ellipsis;
+    display: block;
+  }
+  img {
+    display: inline-block;
+    border-radius: 50%;
+  }
+}

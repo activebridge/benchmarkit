@@ -5,9 +5,9 @@ class BattlesController < ApplicationController
 
   def show
     @battle = Battle.find(params[:id])
-    @comment_battle = Battle.new
     @comments = @battle.comments
     @comment = Comment.new
+    @comment.build_comment_battle
   end
 
   def create

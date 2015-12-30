@@ -1,0 +1,17 @@
+- result = @battle.result.nil? ? nil : JSON.parse(@battle.result, quirks_mode: true)
+- if result.is_a?(Array)
+  | var content = "#{j(render 'table_result', result: result)}";
+  - if params[:comment]
+    | console.log('#{@battle.result.html_safe}');
+    | $('#comment_comment_battle_attributes_result').val('#{@battle.result.html_safe}');
+  - else
+    | content +=  j(render 'get_link_form', battle: @battle)
+
+- elsif result
+  | var content = "<center><h3 class='center-align'>Please check your Before and After code!</h3></center><br/> #{j(result)}";
+- else
+  | var content = "<div class='center-align'>
+  = @battle.errors.full_messages.to_sentence
+  | </div>";
+
+| $('#result').html(content)

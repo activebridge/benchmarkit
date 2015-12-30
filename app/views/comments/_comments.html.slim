@@ -1,7 +1,5 @@
-h3 Comments
+.row
+  .btn-flat Comments
+  = link_to 'New comment', '#comment_modal', class: 'modal-trigger waves-effect waves-light btn'
 = render partial: 'comments/comment', collection: comments
-= simple_form_for @comment_battle do |f|
-  = f.input :before
-  = f.input :after
-  = f.input :result
-  = f.submit
+= render 'comments/new_comment'

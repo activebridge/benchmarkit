@@ -1,0 +1,12 @@
+a {
+  color: black;
+}
+
+.btn-bordered {
+  border: 1px solid;
+}
+
+.btn-bordered-radius {
+  @extend .btn-bordered;
+  border-radius: 5px;
+}

@@ -5,10 +5,10 @@
         ' Share link
       .card-action
         p Your battle was saved. You can copy link and share.
-        #link-icon.col.s1 data-clipboard-target='url' data-clipboard-text='Default clipboard text from attribute' title='Copy to clipboard.'
+        #link-icon data-clipboard-target='url' data-clipboard-text='Default clipboard text from attribute' title='Copy to clipboard.'
           i.material-icons.small.md-dark
             | insert link
-        #url.col.s11
+        #url
           = battle_url(@battle)
 
 javascript:

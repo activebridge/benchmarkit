@@ -1,8 +1,16 @@
-= comment.text
-br
-' Before:
-= comment&.battle.before
-' After:
-= comment&.battle.after
-br
-= comment&.battle.result
+.avatar
+  div.user
+    = image_tag(comment.user.image, size: '80x80')
+    span= comment.user.nickname
+  - if comment.text
+    = comment.text
+    .grey.lighten-4.indent
+      = comment.text
+- if battle = comment.comment_battle
+  .row
+    .col.s12.l6.input-field
+      = text_area_tag :after, battle.after, size: '10x15', disabled: true, class: 'materialize-textarea'
+    .col.s12.l6
+      = render 'table_result', result: display_result(battle)
+
+hr
