@@ -1,0 +1,4 @@
+- if @comment.persisted?
+  | $('#comment_modal').closeModal()
+- else
+  | $('#error').append('#{@comment.errors[:comment].first}')

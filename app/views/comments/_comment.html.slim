@@ -1,10 +1,10 @@
-.avatar
-  div.user
-    = image_tag(comment.user.image, size: '80x80')
-    span= comment.user.nickname
+.comment.grey.lighten-4.indent id="comment_#{comment.id}"
+  .avatar.float-left.center-align
+    div.user
+      = image_tag(comment.user.image, size: '80x80')
+      b= comment.user.nickname
   - if comment.text
-    = comment.text
-    .grey.lighten-4.indent
+    .comment-text
       = comment.text
 - if battle = comment.comment_battle
   .row

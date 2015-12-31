@@ -1,6 +1,7 @@
 #comment_modal.modal.modal-fixed-footer
+  #error.red.darken-4.center-align
   .modal-content
-    = simple_form_for [@battle, @comment] do |f|
+    = simple_form_for [@battle, @comment], remote: true do |f|
       = f.simple_fields_for :comment_battle do |b|
         .row
           .col.s12.l6.input-field
