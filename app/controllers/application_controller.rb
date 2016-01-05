@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def current_user
-    @current_user = Account.find(session['account_id']) if session['account_id']
+    @current_user = User.find(session['user_id']) if session['user_id']
   rescue ActiveRecord::RecordNotFound
     reset_session
   end

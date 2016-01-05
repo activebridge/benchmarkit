@@ -11,12 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221164731) do
+ActiveRecord::Schema.define(version: 20151228141911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: :cascade do |t|
+  create_table "battles", force: :cascade do |t|
+    t.text     "before"
+    t.text     "after"
+    t.text     "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "battles", ["user_id"], name: "index_battles_on_user_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "head_battle_id"
+    t.integer  "comment_battle_id"
+    t.integer  "user_id"
+    t.text     "text"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "comments", ["comment_battle_id"], name: "index_comments_on_comment_battle_id", using: :btree
+  add_index "comments", ["head_battle_id"], name: "index_comments_on_head_battle_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
     t.string   "uid"
     t.string   "email"
     t.string   "nickname"
@@ -28,12 +52,5 @@ ActiveRecord::Schema.define(version: 20151221164731) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "battles", force: :cascade do |t|
-    t.text     "before"
-    t.text     "after"
-    t.text     "result"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "battles", "users"
 end

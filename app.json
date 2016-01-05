@@ -1,0 +1,14 @@
+{
+  "name": "BanchmarkIt",
+  "description": "Banchmarking ruby code",
+  "description": [
+    "ruby",
+    "rails",
+    "benchmark",
+    "rubyonrails",
+    "ruby on rails"
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}

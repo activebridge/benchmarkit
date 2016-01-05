@@ -9,7 +9,8 @@ module Benchmarkit
     config.active_record.raise_in_transactional_callbacks = true
     config.generators do |g|
       g.assets false
-      g.helper_specs false
+      g.helper false
+      g.test_framework false
     end
     config.quiet_assets = false
   end

@@ -10,3 +10,7 @@
 .row
   .col.s12.l8.offset-l2
     = render 'table_result', result: display_result(@battle)
+- if current_user
+  .divider
+  #comments
+    = render 'comments/comments', comments: @comments

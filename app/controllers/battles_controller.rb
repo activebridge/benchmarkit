@@ -5,6 +5,9 @@ class BattlesController < ApplicationController
 
   def show
     @battle = Battle.find(params[:id])
+    @comments = @battle.comments
+    @comment = Comment.new
+    @comment.build_comment_battle
   end
 
   def create
@@ -14,6 +17,7 @@ class BattlesController < ApplicationController
 
   def count
     @battle = Battle.new(battle_params)
+    @battle.count = true
     if @battle.valid?
       @battle.result = @battle.compare.to_json
     end
@@ -22,6 +26,7 @@ class BattlesController < ApplicationController
   private
 
   def battle_params
+    params[:battle].merge!(user_id: current_user&.id)
     params.require(:battle).permit!
   end
 end

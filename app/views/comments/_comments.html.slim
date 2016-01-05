@@ -1,0 +1,5 @@
+.row
+  .btn-flat Comments
+  = link_to 'New comment', '#comment_modal', class: 'modal-trigger waves-effect waves-light btn'
+= render partial: 'comments/comment', collection: comments
+= render 'comments/new_comment'

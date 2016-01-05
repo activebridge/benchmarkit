@@ -1,5 +1,6 @@
 module BattleHelper
   def display_result(battle)
-    JSON.parse(battle.result)
+    result = JSON.parse(battle.result)
+    battle.comment ? result[1..-1] : result
   end
 end

@@ -1,0 +1,2 @@
+$ ->
+  $('.modal-trigger').leanModal()
