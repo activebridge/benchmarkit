@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save
-    # redirect_to battle_path(@battle)
+    @comments = @battle.comments
   end
 
   private

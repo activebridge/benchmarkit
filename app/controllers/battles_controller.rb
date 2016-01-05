@@ -17,6 +17,7 @@ class BattlesController < ApplicationController
 
   def count
     @battle = Battle.new(battle_params)
+    @battle.count = true
     if @battle.valid?
       @battle.result = @battle.compare.to_json
     end

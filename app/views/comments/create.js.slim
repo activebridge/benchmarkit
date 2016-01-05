@@ -1,4 +1,8 @@
 - if @comment.persisted?
-  | $('#comment_modal').closeModal()
+  - @comment = Comment.new
+  - @comment.build_comment_battle
+  | $('#comment_modal').closeModal();
+  | $('#comments').html("#{j render 'comments/comments', comments: @comments}");
+  | $('.modal-trigger').leanModal();
 - else
-  | $('#error').append('#{@comment.errors[:comment].first}')
+  | $('#error').append('#{@comment.errors[:comment].first}');

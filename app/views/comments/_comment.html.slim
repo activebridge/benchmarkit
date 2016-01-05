@@ -11,6 +11,6 @@
     .col.s12.l6.input-field
       = text_area_tag :after, battle.after, size: '10x15', disabled: true, class: 'materialize-textarea'
     .col.s12.l6
-      = render 'table_result', result: display_result(battle)
+      = render 'battles/table_result', result: display_result(battle)
 
 hr
