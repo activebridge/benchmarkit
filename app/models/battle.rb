@@ -1,7 +1,7 @@
 class Battle < ActiveRecord::Base
   attr_accessor :count
 
-  ITERATIONS_COUNT = 50_000
+  ITERATIONS_COUNT = 5
 
   validates :before, :after, presence: true
   validates :result, presence: true, unless: :count
