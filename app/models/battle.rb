@@ -2,7 +2,7 @@ class Battle < ActiveRecord::Base
   attr_accessor :count
 
   ITERATIONS_COUNT = 5
-  EXECUTION_MAX_TIME = 40 # sec
+  EXECUTION_MAX_TIME = 25 # sec
 
   validates :before, :after, presence: true
   validates :result, presence: true, unless: :count
