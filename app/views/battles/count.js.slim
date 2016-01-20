@@ -7,7 +7,7 @@
     | content +=  "#{j(render 'get_link_form', battle: @battle)}";
 
 - elsif result
-  | var content = "<center><h3 class='center-align'>Please check your Before and After code!</h3></center><br/> #{j(result)}";
+  | var content = "#{j(render 'error_code', result: result)}";
 - else
   | var content = "<div class='center-align'>#{@battle.errors.full_messages.to_sentence}</div>";
 

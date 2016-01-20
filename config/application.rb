@@ -13,6 +13,7 @@ module Benchmarkit
       g.test_framework false
     end
     config.quiet_assets = false
+    config.assets.log = false
   end
 end
 
